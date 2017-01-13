@@ -5,7 +5,7 @@ The image is available directly from [https://index.docker.io](https://hub.docke
 
 This image contains the following softwares:
 
-* GHC v8.0.1
+* GHC v8.0.2
 * Cabal v1.24 
 
 ## Get this image
@@ -45,13 +45,13 @@ The above step will launch and run the image with:
 ### Haskell
 
     root@haskell:~# ghci --version
-	The Glorious Glasgow Haskell Compilation System, version 8.0.1
+	The Glorious Glasgow Haskell Compilation System, version 8.0.2
 
 ### Cabal
 
     root@haskell:~# cabal --version
-    cabal-install version 1.24.0.0
-	compiled using version 1.24.0.0 of the Cabal library
+    cabal-install version 1.24.0.2
+	compiled using version 1.24.0.2 of the Cabal library
 
 
 ## Problems? Questions? Contributions? [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](http://p7h.org/contact/)
@@ -59,5 +59,5 @@ If you find any issues or would like to discuss further, please ping me on my Tw
 
 
 ## License [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
-Copyright &copy; 2016 Prashanth Babu.<br>
+Copyright &copy; 2017 Prashanth Babu.<br>
 Licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
