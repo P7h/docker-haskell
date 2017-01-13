@@ -21,12 +21,37 @@ Copy the [`Dockerfile`](Dockerfile) to a new folder on your machine and then inv
 
 ### Pull the image
 
-    docker pull p7hb/docker-haskell
+#### Stack latest [i.e. 8.0.2]
+[Dockerfile for GHC v8.0.2](https://github.com/P7h/docker-haskell)
+
+     docker pull p7hb/docker-haskell
+
+#### GHC v8.0.2
+[Dockerfile for GHC v8.0.2](https://github.com/P7h/docker-haskell/tree/8.0.2)
+
+     docker pull p7hb/docker-haskell:8.0.2
+
+#### GHC v8.0.1
+[Dockerfile for GHC v8.0.1](https://github.com/P7h/docker-haskell/tree/8.0.1)
+
+    docker pull p7hb/docker-haskell:8.0.1
 
 
 ## Run the image
+Other GHC image versions of this repository can be booted by suffixing the image with the GHC version. It can have values of `latest`, `8.0.2` and `8.0.1`.
+
+### Run the latest image i.e. GHC `8.0.2`
+GHC latest version as on 13th January, 2017 is `8.0.2`.  So, `:latest` or `8.0.2` both refer to the same image.
 
     docker run -it -h haskell --name=haskell p7hb/docker-haskell
+
+### Run the image: GHC v8.0.2
+
+    docker run -it -h haskell --name=haskell p7hb/docker-haskell:8.0.2
+
+### Run the image: GHC v8.0.1
+
+    docker run -it -h haskell --name=haskell p7hb/docker-haskell:8.0.1
 
 
 The above step will launch and run the image with:
