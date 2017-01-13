@@ -1,12 +1,16 @@
-FROM ubuntu
+FROM ubuntu:xenial
 
 MAINTAINER Prashanth Babu <Prashanth.Babu@gmail.com>
 
 RUN apt-get update -yqq && \
   apt-get install -yqq software-properties-common tmux screen vim && \
-  add-apt-repository -y ppa:hvr/ghc && \
+  apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 575159689BEFB442 && \
+  echo 'deb http://download.fpcomplete.com/ubuntu xenial main'| tee /etc/apt/sources.list.d/fpco.list && \
   apt-get update -yqq && \
-  apt-get install -yqq cabal-install-1.24 ghc-8.0.2 && \
+  apt-get install -yqq stack && \
+  stack upgrade && \
+  stack setup && \
+  # eval "$(stack --bash-completion-script stack)" && \
   apt-get autoclean && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
@@ -16,10 +20,5 @@ USER root
 
 # Working directory is set to the home folder of `root` user.
 WORKDIR /root
-
-# Configure env variables for Haskell and Cabal.
-ENV HASKELL_HOME    /opt/ghc/8.0.2/
-ENV CABAL_HOME      /opt/cabal/1.24/
-ENV PATH            $HASKELL_HOME/bin:$CABAL_HOME/bin:$PATH
 
 CMD ["/bin/bash"]
